@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎮 Game Night RSVP</title>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #020617, #0f172a);
+      color: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+    .card {
+      background: #020617;
+      max-width: 600px;
+      width: 100%;
+      padding: 28px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+    }
+    h1 { margin-top: 0; font-size: 2rem; }
+    p { margin-top: 12px; }
+    button {
+      margin-top: 24px;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 14px;
+      background: #22c55e;
+      font-size: 1.05rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background: #16a34a; }
+    .note { font-size: 0.85rem; opacity: 0.75; margin-top: 16px; }
+    img { display: block; margin: 12px auto; }
+    a { color: #22c55e; font-weight: bold; text-align: center; display: block; margin-top: 12px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🔐 Simple password gate -->
+  <script>
+    const PASSWORD = "game_night"; // change this to your password
+    const entered = prompt("Enter the game night password:");
+    if (entered !== PASSWORD) {
+      document.body.innerHTML = "";
+      alert("Wrong password 😢");
+      window.location.href = "https://google.com";
+    }
+  </script>
+
+  <div class="card">
+    <h1>🎲 Game Night</h1>
+    <p><strong>Date:</strong> Friday<br>
+       <strong>Time:</strong> 9:00 PM<br>
+       <strong>Location:</strong> My Place 🏠</p>
+
+    <h2>📱 RSVP</h2>
+    <p>Scan the QR code or tap the link below:</p>
+
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://forms.gle/wJiXjFzmdUy9Zzzg8" alt="Game Night RSVP QR Code" />
+
+    <a href="https://forms.gle/wJiXjFzmdUy9Zzzg8" target="_blank">Open RSVP Form</a>
+
+    <p class="note">Everyone’s responses are saved automatically in Google Forms.</p>
+  </div>
+
+</body>
+</html>
